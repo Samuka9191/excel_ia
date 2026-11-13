@@ -1,0 +1,167 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f4f9;
+    color: #26344a;
+}
+
+header {
+    background: #17365d;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+header p {
+    margin-top: 8px;
+}
+
+main {
+    width: 95%;
+    max-width: 1300px;
+    margin: 30px auto;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.card, .formulario, .tabela {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+.card h3 {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.card p {
+    font-size: 23px;
+    font-weight: bold;
+    margin-top: 12px;
+    color: #2563eb;
+}
+
+.formulario {
+    margin-bottom: 25px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+input, select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+}
+
+input:focus, select:focus {
+    outline: 2px solid #93c5fd;
+}
+
+input[readonly] {
+    background: #e9eef5;
+}
+
+.resumo {
+    grid-column: 1 / -1;
+    background: #eff6ff;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.resumo p {
+    margin: 7px 0;
+}
+
+button {
+    grid-column: 1 / -1;
+    padding: 13px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #174db4;
+}
+
+#mensagem {
+    grid-column: 1 / -1;
+    font-weight: bold;
+    color: #0f9d78;
+}
+
+.tabela {
+    overflow-x: auto;
+}
+
+#pesquisa {
+    margin-bottom: 15px;
+    max-width: 350px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background: #17365d;
+    color: white;
+}
+
+tr:hover {
+    background: #f1f5f9;
+}
+
+@media(max-width: 800px) {
+    .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 450px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+}

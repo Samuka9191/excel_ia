@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Vendas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Painel de Vendas</h1>
+    <p>Gerenciamento de pedidos</p>
+</header>
+
+<main>
+
+    <section class="dashboard">
+        <div class="card">
+            <h3>Faturamento</h3>
+            <p id="faturamento">R$ 0,00</p>
+        </div>
+
+        <div class="card">
+            <h3>Pedidos</h3>
+            <p id="totalPedidos">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Unidades vendidas</h3>
+            <p id="totalUnidades">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Ticket médio</h3>
+            <p id="ticketMedio">R$ 0,00</p>
+        </div>
+    </section>
+
+    <section class="formulario">
+        <h2>Cadastrar novo pedido</h2>
+
+        <form id="formPedido">
+
+            <label>Código do pedido</label>
+            <input type="text" id="codigo" readonly>
+
+            <label>Região</label>
+            <select id="regiao" required>
+                <option value="">Selecione</option>
+                <option>Região Centro-Oeste</option>
+                <option>Região Nordeste</option>
+                <option>Região Norte</option>
+                <option>Região Sul</option>
+                <option>Região Sudeste</option>
+            </select>
+
+            <label>Estado</label>
+            <select id="estado" required>
+                <option value="">Selecione</option>
+                <option>GO</option>
+                <option>SP</option>
+                <option>RS</option>
+                <option>BA</option>
+                <option>RJ</option>
+                <option>MG</option>
+                <option>AM</option>
+                <option>PR</option>
+                <option>ES</option>
+            </select>
+
+            <label>Produto</label>
+            <select id="produto" required>
+                <option value="">Selecione</option>
+                <option>Pen drive 32GB</option>
+                <option>Monitor OLED 33"</option>
+                <option>Smartphone Android</option>
+                <option>SmartTV TV 50" 4K</option>
+                <option>TV 48" 4K</option>
+                <option>TV 60" 4K</option>
+                <option>Smartphone iOS</option>
+            </select>
+
+            <label>Data</label>
+            <input type="date" id="data" required>
+
+            <label>Quantidade</label>
+            <input type="number" id="quantidade"
+                   min="1" value="1" required>
+
+            <div class="resumo">
+                <p>Valor unitário: <strong id="preco">R$ 0,00</strong></p>
+                <p>Frete: <strong id="frete">R$ 0,00</strong></p>
+                <p>Total: <strong id="total">R$ 0,00</strong></p>
+            </div>
+
+            <button type="submit">Cadastrar pedido</button>
+
+            <p id="mensagem"></p>
+        </form>
+    </section>
+
+    <section class="tabela">
+        <h2>Pedidos cadastrados</h2>
+
+        <input type="text" id="pesquisa"
+               placeholder="Pesquisar pedido ou produto...">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Região</th>
+                    <th>Estado</th>
+                    <th>Produto</th>
+                    <th>Data</th>
+                    <th>Quantidade</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+
+            <tbody id="listaPedidos"></tbody>
+        </table>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
