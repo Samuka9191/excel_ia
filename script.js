@@ -208,3 +208,53 @@ document.getElementById('pesquisa').addEventListener(
 
 // Inicializar painel
 atualizarPainel();
+
+document.getElementById('listaPedidos').innerHTML =
+    lista.map(p => {
+        const total = p.quantidade * (
+            precos[p.produto] + fretes[p.regiao]
+        );
+
+        return `
+            <tr>
+                <td>${p.codigo}</td>
+                <td>${p.regiao}</td>
+                <td>${p.estado}</td>
+                <td>${p.produto}</td>
+                <td>${p.data}</td>
+                <td>${p.quantidade}</td>
+                <td>${moeda(total)}</td>
+                <td>
+                    <button class="btn-remover" data-codigo="${p.codigo}">
+                        🗑 Remover
+                    </button>
+                </td>
+            </tr>
+        `;
+    }).join('');[]
+// Remover pedido
+document.getElementById('listaPedidos').addEventListener('click', function(e) {
+    if (e.target.classList.contains('btn-remover')) {
+        const codigo = Number(e.target.dataset.codigo);
+
+        const confirmar = confirm(
+            `Tem certeza que deseja remover o pedido ${codigo}?`
+        );
+
+        if (confirmar) {
+            pedidos = pedidos.filter(p => p.codigo !== codigo);
+
+            localStorage.setItem(
+                'pedidosVendas',
+                JSON.stringify(pedidos)
+            );
+
+            atualizarPainel();
+
+            document.getElementById('codigo').value = gerarCodigo();
+
+            document.getElementById('mensagem').textContent =
+                `Pedido ${codigo} removido com sucesso!`;
+        }
+    }
+});

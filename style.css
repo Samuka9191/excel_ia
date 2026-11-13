@@ -7,19 +7,21 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #f1f4f9;
-    color: #26344a;
+    background: #F5F2FA;
+    color: #302746;
 }
 
 header {
-    background: #17365d;
+    background: #392461;
     color: white;
     padding: 25px;
     text-align: center;
+    border-bottom: 4px solid #A77BFF;
 }
 
 header p {
     margin-top: 8px;
+    color: #E2D5FA;
 }
 
 main {
@@ -39,11 +41,16 @@ main {
     background: white;
     padding: 22px;
     border-radius: 12px;
-    box-shadow: 0 3px 12px #00000010;
+    box-shadow: 0 3px 12px #39246115;
+    border: 1px solid #E4D9F2;
+}
+
+.card {
+    border-top: 4px solid #8056D9;
 }
 
 .card h3 {
-    color: #64748b;
+    color: #786C8E;
     font-size: 14px;
 }
 
@@ -51,7 +58,7 @@ main {
     font-size: 23px;
     font-weight: bold;
     margin-top: 12px;
-    color: #2563eb;
+    color: #8056D9;
 }
 
 .formulario {
@@ -60,6 +67,7 @@ main {
 
 h2 {
     margin-bottom: 20px;
+    color: #392461;
 }
 
 form {
@@ -71,38 +79,47 @@ form {
 label {
     font-weight: bold;
     font-size: 13px;
+    color: #51436F;
 }
 
 input, select {
     width: 100%;
     padding: 11px;
-    border: 1px solid #cbd5e1;
+    border: 1px solid #D8CBEA;
     border-radius: 7px;
+    background: #FCFAFF;
+    color: #302746;
 }
 
 input:focus, select:focus {
-    outline: 2px solid #93c5fd;
+    outline: 2px solid #C4A7FF;
 }
 
 input[readonly] {
-    background: #e9eef5;
+    background: #EEE8F8;
+    font-weight: bold;
 }
 
 .resumo {
     grid-column: 1 / -1;
-    background: #eff6ff;
+    background: #F1EBFC;
     padding: 15px;
     border-radius: 8px;
+    border-left: 4px solid #8056D9;
 }
 
 .resumo p {
     margin: 7px 0;
 }
 
+.resumo strong {
+    color: #6840B2;
+}
+
 button {
     grid-column: 1 / -1;
     padding: 13px;
-    background: #2563eb;
+    background: #8056D9;
     color: white;
     border: none;
     border-radius: 7px;
@@ -111,13 +128,13 @@ button {
 }
 
 button:hover {
-    background: #174db4;
+    background: #5733A0;
 }
 
 #mensagem {
     grid-column: 1 / -1;
     font-weight: bold;
-    color: #0f9d78;
+    color: #168B68;
 }
 
 .tabela {
@@ -133,23 +150,49 @@ table {
     width: 100%;
     border-collapse: collapse;
     white-space: nowrap;
+    border: 1px solid #D8CBEA;
 }
 
 th, td {
     padding: 12px;
-    border-bottom: 1px solid #ddd;
+    border: 1px solid #E4D9F2;
     text-align: left;
 }
 
 th {
-    background: #17365d;
+    background: #6840A5;
     color: white;
 }
 
-tr:hover {
-    background: #f1f5f9;
+tbody tr:nth-child(even) {
+    background: #F3EDFC;
 }
 
+tbody tr:nth-child(odd) {
+    background: #FFFFFF;
+}
+
+tbody tr:hover {
+    background: #E9DDFC;
+}
+
+/* Botão remover */
+.btn-remover {
+    background: #8056D9;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    width: auto;
+}
+
+.btn-remover:hover {
+    background: #C0396B;
+}
+
+/* Responsividade */
 @media(max-width: 800px) {
     .dashboard {
         grid-template-columns: repeat(2, 1fr);
@@ -164,4 +207,18 @@ tr:hover {
     .dashboard {
         grid-template-columns: 1fr;
     }
+}
+
+.btn-remover {
+    background-color: #c0396b;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-remover:hover {
+    background-color: #962d52;
 }
